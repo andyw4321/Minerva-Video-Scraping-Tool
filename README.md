@@ -1,4 +1,4 @@
-# Minerva-Video-Scrapping-Tool
+# Minerva-Video-Scraping-Tool
 
 This is a tool that helps student using Minerva ALF to automate the process of downloading course videos. <br><br><br>
 
@@ -8,7 +8,7 @@ This is a tool that helps student using Minerva ALF to automate the process of d
 
 - Python installed, with necessary packages (selenium, time, urllib)
 - Chrome webdriver installed (Installation Guide: https://sites.google.com/a/chromium.org/chromedriver/)
-- Login credentials to Minerva ALF prepared (by email and passowrd, not Google Account)
+- Login credentials to Minerva ALF prepared (by email and password, not Google Account)
 
 #### Understanding the purpose of functions in the code
 
@@ -42,7 +42,7 @@ navigate_to_recent_courses('//*[@id="minerva-dashboard"]/div[1]/div/div/div/div[
 download('Users/abwong/Class Video')
 ~~~~
 
-**Remember the quotes for the strings!**
+**Remember the quotes for the strings!** <br><br>
 
 ## Troubleshoot
 
@@ -50,7 +50,12 @@ The most common errors you may encounter when running this code is **element can
 
 When you encounter this error, just continue to run the code starting from the video that is not yet downloaded in the destination folder. This can be achieved by editing the loop function in the download function. For example, if you already have 10 videos downloaded, change the function to the following:
 
-` for i in range(10, totalclasscount)`
+` for i in range(10, totalclasscount)`<br><br>
+
+## Future improvement for this code (for developers)
+
+1. I suspect that by inlcuding an explicit wait function when finding elements can help avoid the frequent occurrence of the "element not found/clickable" error.
+2. Now downloading of the video files is done one by one achieved by *urllib.request.urlretrieve* function, which significantly increase the run time of the code. A more efficient downloading function will be more appropriate.
 
 ## My Inspiration
 
