@@ -95,5 +95,5 @@ def download(address):
 		time.sleep(10)
 		vlink = driver.find_element_by_xpath('//*[@id="vjs_video_3_html5_api"]/source')
 		vlinklist.append(vlink.get_attribute('src'))
-		saveaddress = address + "{}.mp4".format(titlelist[i])
+		saveaddress = address + "/{}.mp4".format(titlelist[i])
 		urllib.request.urlretrieve(vlink.get_attribute('src'), saveaddress)
