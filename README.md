@@ -39,8 +39,8 @@ This is the function that will run through all the assessment page and download 
 Example of arranging the functions:
 
 ~~~~
-minerva_login('abwong@connect.ust.hk', 'cjesnfdjf63')
-navigate_to_recent_courses('//*[@id="minerva-dashboard"]/div[1]/div/div/div/div[2]/aside/nav/ul/li[8]/section/div/ul/li[1]/a/span')
+minerva_login('abcdefg@connect.ust.hk', 'cj5ed4snfdjf63')
+navigate_to_recent_courses('AH51 - McMinn, MW@10:30')
 download('Users/abwong/Class Video')
 ~~~~
 
