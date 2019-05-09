@@ -41,7 +41,7 @@ Example of arranging the functions:
 ~~~~
 minerva_login('abcdefg@connect.ust.hk', 'cj5ed4snfdjf63')
 navigate_to_recent_courses('AH51 - McMinn, MW@10:30')
-download('Users/abwong/Class Video')
+download('Users/abcedfg/Class Video')
 ~~~~
 
 **Remember the quotes for the strings!** <br><br>
