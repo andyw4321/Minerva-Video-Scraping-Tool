@@ -6,15 +6,15 @@ import urllib.request
 driver = webdriver.Chrome("C:/webdriver/chromedriver.exe")
 driver.implicitly_wait(10)
 
-def minerva_login():
+def minerva_login(email,password):
 	driver.get('https://seminar.minerva.kgi.edu/?password=1')
-	driver.find_element_by_id("js-email").send_keys("email@example.com")
-	driver.find_element_by_id("js-password").send_keys("password")
+	driver.find_element_by_id("js-email").send_keys(email)
+	driver.find_element_by_id("js-password").send_keys(password)
 	driver.find_element_by_id("sign-in").click()
 
 
-def navigate_to_recent_courses(coursexapth):
-	driver.find_element_by_xpath(coursexapth).click()
+def navigate_to_recent_courses(coursexapth_dash):
+	driver.find_element_by_xpath(coursexapth_dash).click()
 	time.sleep(5)
 	driver.find_element_by_class_name('show-more-or-less').click()
 	time.sleep(1)
@@ -46,9 +46,9 @@ def navigate_to_recent_courses(coursexapth):
 	for i in range(len(titlelist)):
 		titlelist[i] = titlelist[i].replace('?','')
 
-def navigate_to_past_courses(coursexpath_dash,coursexpath_list):
+def navigate_to_past_courses(coursexpath_list):
 	time.sleep(3)
-	driver.find_element_by_xpath(coursexpath_dash).click()
+	driver.find_element_by_xpath('//*[@id="minerva-dashboard"]/div[1]/div/div/div/div[2]/aside/nav/ul/li[7]/section/div/ul/li[5]/a').click()
 	time.sleep(3)
 	driver.find_element_by_xpath(coursexapth_list).click()
 	time.sleep(5)
@@ -85,7 +85,7 @@ def navigate_to_past_courses(coursexpath_dash,coursexpath_list):
 
 
 
-def get_assessment_link():
+def download(address):
 	totalclasscount = len(titlelist)
 	vlinklist = []
 	for i in range(totalclasscount):
@@ -95,5 +95,5 @@ def get_assessment_link():
 		time.sleep(10)
 		vlink = driver.find_element_by_xpath('//*[@id="vjs_video_3_html5_api"]/source')
 		vlinklist.append(vlink.get_attribute('src'))
-		saveaddress = "/Users/User/Class Videos/{}.mp4".format(titlelist[i])
+		saveaddress = address + "{}.mp4".format(titlelist[i])
 		urllib.request.urlretrieve(vlink.get_attribute('src'), saveaddress)
