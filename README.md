@@ -21,7 +21,7 @@ This is a necessary login step that will be placed at the beginning of the seque
 This is the function that will copy the lecture titles and the associated link to the assessment page (where the video will be found). This only works for courses that appears on the left hand column of the dashboard, i.e. **recent courses**. The input is string which is  the exact course title that you want to download. Example:
 >AH51 - McMinn, MW@10:30
 
-` navigate_to_past_courses(coursexpath_dash,coursexpath_list)`
+` navigate_to_past_courses(coursetitle)`
 
 This is the function that will copy the lecture titles and the associated link to the assessment page (where the video will be found). This only works for courses that are not found on the left hand column of the dashboard, i.e. **past courses**.  The input is string which is  the exact course title that you want to download. Example:
 >AH51 - McMinn, MW@10:30
