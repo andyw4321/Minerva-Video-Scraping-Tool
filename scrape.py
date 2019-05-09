@@ -13,8 +13,8 @@ def minerva_login(email,password):
 	driver.find_element_by_id("sign-in").click()
 
 
-def navigate_to_recent_courses(coursexapth_dash):
-	driver.find_element_by_xpath(coursexapth_dash).click()
+def navigate_to_recent_courses(coursetitle):
+	driver.find_element_by_xpath("//a[@title='{}']".format(coursetitle)).click()
 	time.sleep(5)
 	driver.find_element_by_class_name('show-more-or-less').click()
 	time.sleep(1)
@@ -46,11 +46,11 @@ def navigate_to_recent_courses(coursexapth_dash):
 	for i in range(len(titlelist)):
 		titlelist[i] = titlelist[i].replace('?','')
 
-def navigate_to_past_courses(coursexpath_list):
+def navigate_to_past_courses(coursetitle):
 	time.sleep(3)
 	driver.find_element_by_xpath('//*[@id="minerva-dashboard"]/div[1]/div/div/div/div[2]/aside/nav/ul/li[7]/section/div/ul/li[5]/a').click()
 	time.sleep(3)
-	driver.find_element_by_xpath(coursexapth_list).click()
+	driver.find_element_by_xpath("//a[@title='{}']".format(coursetitle)).click()
 	time.sleep(5)
 	driver.find_element_by_class_name('show-more-or-less').click()
 	time.sleep(1)
