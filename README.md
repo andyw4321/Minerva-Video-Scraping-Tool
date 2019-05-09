@@ -52,10 +52,11 @@ When you encounter this error, just continue to run the code starting from the v
 
 ` for i in range(10, totalclasscount)`<br><br>
 
-## Future improvement for this code (for developers)
+## Possible improvement for this code (for developers)
 
 1. I suspect that by inlcuding an explicit wait function when finding elements can help avoid the frequent occurrence of the "element not found/clickable" error.
 2. Now downloading of the video files is done one by one achieved by *urllib.request.urlretrieve* function, which significantly increase the run time of the code. A more efficient downloading function will be more appropriate.
+3. The code can add an alternative login method, by Google Account.
 
 ## My Inspiration
 
