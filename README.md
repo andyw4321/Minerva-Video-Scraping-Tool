@@ -12,19 +12,15 @@ This is a tool that helps student using Minerva ALF to automate the process of d
 
 #### Understanding the purpose of functions in the code
 
-` minerva_login(email,password)`
+` login(email,password)`
 
 This is a necessary login step that will be placed at the beginning of the sequence of functions you will run to download the videos. The inputs are strings which are your Minerva ALF login email and password.
 
-`navigate_to_recent_courses(coursetitle)`
+`fetch_lectures(coursetitle,sectiontitle,old)`
 
-This is the function that will copy the lecture titles and the associated link to the assessment page (where the video will be found). This only works for courses that appears on the left hand column of the dashboard, i.e. **recent courses**. The input is string which is  the exact course title that you want to download. Example:
->AH51 - McMinn, MW@10:30
+This is the function that will copy the lecture titles and the associated link to the assessment page (where the video will be found). The input are two strings and one boolean. The first is the course title (e.g. AH51), the second is the section title (e.g. McMinn, MW@10:30), and the boolean indicates whether the course is a current one or a past course (i.e. TRUE = past course, FALSE = current course)
 
-` navigate_to_past_courses(coursetitle)`
-
-This is the function that will copy the lecture titles and the associated link to the assessment page (where the video will be found). This only works for courses that are not found on the left hand column of the dashboard, i.e. **past courses**.  The input is string which is  the exact course title that you want to download. Example:
->AH51 - McMinn, MW@10:30
+**Caution: Follow the format of the course title and the section title strictly, any mismatch will result in failures in locating the course. (e.g. beware the difference between McMinn, MW@10:30 and McMinn, MW@10:30am)**
 
 ` download(address)`
 
@@ -56,9 +52,8 @@ When you encounter this error, just continue to run the code starting from the v
 
 ## Possible improvement for this code (for developers)
 
-1. I suspect that by inlcuding an explicit wait function when finding elements can help avoid the frequent occurrence of the "element not found/clickable" error.
-2. Now downloading of the video files is done one by one achieved by *urllib.request.urlretrieve* function, which significantly increase the run time of the code. A more efficient downloading function will be more appropriate.
-3. The code can add an alternative login method, by Google Account.
+1. Now downloading of the video files is done one by one achieved by *urllib.request.urlretrieve* function, which significantly increase the run time of the code. A more efficient downloading function will be more appropriate.
+2. The code can add an alternative login method, by Google Account.
 
 ## My Inspiration
 
